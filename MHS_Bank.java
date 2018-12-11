@@ -2,6 +2,11 @@ import java.util.*;
 public class MHS_Bank{
   public ArrayList<MHS_BankAccount> accountList = new ArrayList<MHS_BankAccount>();
 
+  public void addAccount(String accountNumber, double balance) {
+    MHS_BankAccount newAccount = new MHS_BankAccount(accountNumber, balance);
+    accountList.add(newAccount);
+  }
+
   public int indexOfAccount(String accountNumber) {
     int index;
     for( index = 0; index < accountList.size(); index++ ) {
@@ -13,7 +18,4 @@ public class MHS_Bank{
     // or if the accountNumber does not exist, return size()
     return index;
   }
-
-
-
 }
