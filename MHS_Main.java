@@ -1,7 +1,10 @@
 public class MHS_Main{
 
   public MHS_Main(){
-    // create banks
+    MHS_Bank nordea = new MHS_Bank();
+    MHS_Bank handlesbanken = new MHS_Bank();
+    MHS_Bank seb = new MHS_Bank();
+    MHS_Bank swedbank = new MHS_Bank();
     // add accounts to each bank
   }
 
