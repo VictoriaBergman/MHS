@@ -6,7 +6,14 @@ public class MHS_Main{
   }
 
   public Payment checkPayment(String accountNumber, double totalSum) {
+
+    Payment payment = new Payment();
     // method that communicates with TIS
+
+    // check accountNumber is 10 digits
+
+    // extract substring with for bank identification
+    return payment;
   }
 
   public void reset(){
