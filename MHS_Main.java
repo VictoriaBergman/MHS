@@ -53,7 +53,7 @@ public class MHS_Main{
         payment.nameOfBank = "SEB";
         payment.isValid = seb.tryPayment(accountNumber, totalSum);
       } else if (bankId == "9951") {
-        paymnet.nameOfBank = "Swedbank";
+        payment.nameOfBank = "Swedbank";
         payment.isValid = swedbank.tryPayment(accountNumber, totalSum);
       }
     }
