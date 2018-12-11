@@ -9,7 +9,7 @@ public class MHS_Main{
     // method that communicates with TIS
   }
 
-  public reset(){
+  public void reset(){
     // reset Payment ?? Or make sure this happens in checkPayment??
   }
 
