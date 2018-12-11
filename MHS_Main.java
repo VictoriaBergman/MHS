@@ -1,8 +1,8 @@
 public class MHS_Main{
-    MHS_Bank nordea;
-    MHS_Bank handelsbanken;
-    MHS_Bank seb;
-    MHS_Bank swedbank;
+    public MHS_Bank nordea;
+    public MHS_Bank handelsbanken;
+    public MHS_Bank seb;
+    public MHS_Bank swedbank;
 
   public MHS_Main(){
     //Creat banks.
