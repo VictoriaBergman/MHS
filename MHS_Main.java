@@ -42,17 +42,17 @@ public class MHS_Main{
     // method that communicates with TIS
 
     if (accountNumber.length() == 10) {
-      String bankId = accountNumber.substring(0,3); // extract the bank id
-      if (bankId == "1234") {
+      String bankId = accountNumber.substring(0,4); // extract the bank id
+      if (bankId.equals("1234")) {
         payment.nameOfBank = "Nordea";
         payment.isValid = nordea.tryPayment(accountNumber, totalSum);
-      } else if (bankId == "1423") {
+      } else if (bankId.equals("1423")) {
         payment.nameOfBank = "Handelsbanken";
         payment.isValid = handelsbanken.tryPayment(accountNumber, totalSum);
-      } else if (bankId == "5531") {
+      } else if (bankId.equals("5531")) {
         payment.nameOfBank = "SEB";
         payment.isValid = seb.tryPayment(accountNumber, totalSum);
-      } else if (bankId == "9951") {
+      } else if (bankId.equals("9951")) {
         payment.nameOfBank = "Swedbank";
         payment.isValid = swedbank.tryPayment(accountNumber, totalSum);
       }
