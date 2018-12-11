@@ -22,4 +22,15 @@ public class MHS_Bank{
     // or if the accountNumber does not exist, return size()
     return index;
   }
+  
+  public double getBalanceOfAccount (String accountNumber){
+    int index = indexOfAccount(accountNumber);
+    double balance = -1;
+
+    if (index <accountList.size()){
+      balance = accountList.get(index).balance;
+
+    }
+    return balance;
+  }
 }
