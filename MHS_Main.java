@@ -10,9 +10,10 @@ public class MHS_Main{
     Payment payment = new Payment();
     // method that communicates with TIS
 
-    // check accountNumber is 10 digits
+    if (accountNumber.length() == 10) {
+      String bankId = accountNumber.substring(0,3); // extract the bank id
 
-    // extract substring with for bank identification
+    }
     return payment;
   }
 
