@@ -11,7 +11,7 @@ public class MHS_Bank{
     return index < accountList.size();
   }
 
-  public int indexOfAccount(String accountNumber) {
+  public int getIndexOfAccount(String accountNumber) {
     int index;
     for( index = 0; index < accountList.size(); index++ ) {
       if (accountList.get(index).accountNumber.equals(accountNumber)) {
@@ -22,15 +22,27 @@ public class MHS_Bank{
     // or if the accountNumber does not exist, return size()
     return index;
   }
-  
+
   public double getBalanceOfAccount (String accountNumber){
-    int index = indexOfAccount(accountNumber);
+    int index = getIndexOfAccount(accountNumber);
     double balance = -1;
 
-    if (index <accountList.size()){
+    if (index < accountList.size()){ // refactor this
       balance = accountList.get(index).balance;
-
     }
     return balance;
+  }
+
+  public boolean tryPayment(String accountNumber, double totalSum) {
+    boolean paymentIsValid = false;
+    int index = getIndexOfAccount(accountNumber);
+    if (index < accountList.size()){ //refactor this
+      double balance = getBalanceOfAccount(accountNumber);
+      if (balance >= totalSum){
+        accountList.get(index).balance = accountList.get(index).balance - totalSum;
+        paymentIsValid = true;
+      }
+    }
+  return paymentIsValid;
   }
 }
