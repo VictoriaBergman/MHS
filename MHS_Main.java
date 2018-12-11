@@ -43,7 +43,19 @@ public class MHS_Main{
 
     if (accountNumber.length() == 10) {
       String bankId = accountNumber.substring(0,3); // extract the bank id
-
+      if (bankId == "1234") {
+        payment.nameOfBank = "Nordea";
+        payment.isValid = nordea.tryPayment(accountNumber, totalSum);
+      } else if (bankId == "1423") {
+        payment.nameOfBank = "Handelsbanken";
+        payment.isValid = handelsbanken.tryPayment(accountNumber, totalSum);
+      } else if (bankId == "5531") {
+        payment.nameOfBank = "SEB";
+        payment.isValid = seb.tryPayment(accountNumber, totalSum);
+      } else if (bankId == "9951") {
+        paymnet.nameOfBank = "Swedbank";
+        payment.isValid = swedbank.tryPayment(accountNumber, totalSum);
+      }
     }
     return payment;
   }
