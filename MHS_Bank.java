@@ -7,6 +7,10 @@ public class MHS_Bank{
     accountList.add(newAccount);
   }
 
+  public boolean checkIndex(int index){
+    return index < accountList.size();
+  }
+
   public int indexOfAccount(String accountNumber) {
     int index;
     for( index = 0; index < accountList.size(); index++ ) {
