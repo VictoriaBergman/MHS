@@ -29,11 +29,11 @@ public class MHS_Main{
     seb.addAccount("5531443251", 80);
     seb.addAccount("5531889234", 75);
 
-    swedbank.addAccount(9951618539, 55);
-    swedbank.addAccount(9951628539, 95);
-    swedbank.addAccount(9951653679, 78);
-    swedbank.addAccount(9951653679, 85);
-    swedbank.addAccount(9951617459, 200);
+    swedbank.addAccount("9951618539", 55);
+    swedbank.addAccount("9951628539", 95);
+    swedbank.addAccount("9951653679", 78);
+    swedbank.addAccount("9951653679", 85);
+    swedbank.addAccount("9951617459", 200);
   }
 
   public Payment checkPayment(String accountNumber, double totalSum) {
