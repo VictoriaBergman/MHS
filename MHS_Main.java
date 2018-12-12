@@ -36,10 +36,9 @@ public class MHS_Main{
     swedbank.addAccount("9951617459", 200);
   }
 
+  // method that communicates with TIS
   public Payment checkPayment(String accountNumber, double totalSum) {
-
     Payment payment = new Payment();
-    // method that communicates with TIS
 
     if (accountNumber.length() == 10) {
       String bankId = accountNumber.substring(0,4); // extract the bank id
@@ -58,10 +57,6 @@ public class MHS_Main{
       }
     }
     return payment;
-  }
-
-  public void reset(){
-    // reset Payment ?? Or make sure this happens in checkPayment??
   }
 
 }
