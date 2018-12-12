@@ -5,11 +5,15 @@ public class MHS_Main{
     public MHS_Bank swedbank;
 
   public MHS_Main(){
-    //Creat banks.
+    // create banks
     nordea = new MHS_Bank();
     handelsbanken = new MHS_Bank();
     seb = new MHS_Bank();
     swedbank = new MHS_Bank();
+
+    buildDatabaseOfAccounts();
+  }
+  public void buildDatabaseOfAccounts() {
     // add accounts to each bank
     nordea.addAccount("1234567891", 0);
     nordea.addAccount("1234678912", 10);
@@ -43,17 +47,25 @@ public class MHS_Main{
     if (accountNumber.length() == 10) {
       String bankId = accountNumber.substring(0,4); // extract the bank id
       if (bankId.equals("1234")) {
-        payment.nameOfBank = "Nordea";
         payment.isValid = nordea.tryPayment(accountNumber, totalSum);
+        if(payment.isValid){
+          payment.nameOfBank = "Nordea";
+        }
       } else if (bankId.equals("1423")) {
-        payment.nameOfBank = "Handelsbanken";
         payment.isValid = handelsbanken.tryPayment(accountNumber, totalSum);
+        if(payment.isValid){
+          payment.nameOfBank = "Handelsbanken";
+        }
       } else if (bankId.equals("5531")) {
-        payment.nameOfBank = "SEB";
         payment.isValid = seb.tryPayment(accountNumber, totalSum);
+        if(payment.isValid){
+          payment.nameOfBank = "SEB";
+        }
       } else if (bankId.equals("9951")) {
-        payment.nameOfBank = "Swedbank";
         payment.isValid = swedbank.tryPayment(accountNumber, totalSum);
+        if(payment.isValid){
+          payment.nameOfBank = "Swedbank";
+        }
       }
     }
     return payment;
