@@ -7,7 +7,7 @@ public class MHS_Bank{
     accountList.add(newAccount);
   }
 
-  public boolean checkIndex(int index){
+  public boolean checkIndexIsLessThanSizeOfList(int index){
     return index < accountList.size();
   }
 
