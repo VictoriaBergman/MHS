@@ -25,7 +25,7 @@ public class MHS_Bank{
 
   public double getBalanceOfIndex (int index){
     double balance = -1;
-    if (checkIndexIsLessThanSizeOfList(index)){ // refactor this
+    if (indexIsLessThanSizeOfList(index)){ // refactor this
       balance = accountList.get(index).balance;
     }
     return balance;
@@ -45,7 +45,7 @@ public class MHS_Bank{
   public boolean tryPayment(String accountNumber, double totalSum) {
     boolean paymentIsValid = false;
     int index = getIndexOfAccount(accountNumber);
-    if (indexIsLessThanSizeOfList()){ //refactor this
+    if (indexIsLessThanSizeOfList(index)){ //refactor this
       double balance = getBalanceOfIndex(index);
       if (balance >= totalSum){
         accountList.get(index).balance = accountList.get(index).balance - totalSum;
