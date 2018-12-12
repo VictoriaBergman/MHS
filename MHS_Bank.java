@@ -7,7 +7,7 @@ public class MHS_Bank{
     accountList.add(newAccount);
   }
 
-  public boolean checkIndexIsLessThanSizeOfList(int index){
+  public boolean indexIsLessThanSizeOfList(int index){
     return index < accountList.size();
   }
 
@@ -23,6 +23,15 @@ public class MHS_Bank{
     return index;
   }
 
+  public double getBalanceOfIndex (int index){
+    double balance = -1;
+    if (checkIndexIsLessThanSizeOfList(index)){ // refactor this
+      balance = accountList.get(index).balance;
+    }
+    return balance;
+  }
+
+  /*
   public double getBalanceOfAccount (String accountNumber){
     int index = getIndexOfAccount(accountNumber);
     double balance = -1;
@@ -31,13 +40,13 @@ public class MHS_Bank{
       balance = accountList.get(index).balance;
     }
     return balance;
-  }
+  }*/
 
   public boolean tryPayment(String accountNumber, double totalSum) {
     boolean paymentIsValid = false;
     int index = getIndexOfAccount(accountNumber);
-    if (index < accountList.size()){ //refactor this
-      double balance = getBalanceOfAccount(accountNumber);
+    if (indexIsLessThanSizeOfList()){ //refactor this
+      double balance = getBalanceOfIndex(index);
       if (balance >= totalSum){
         accountList.get(index).balance = accountList.get(index).balance - totalSum;
         paymentIsValid = true;
