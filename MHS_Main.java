@@ -5,7 +5,8 @@ public class MHS_Main{
     public MHS_Bank swedbank;
 
   public MHS_Main(){
-    // create banks
+    
+    //Create banks
     nordea = new MHS_Bank();
     handelsbanken = new MHS_Bank();
     seb = new MHS_Bank();
@@ -13,8 +14,9 @@ public class MHS_Main{
 
     buildDatabaseOfAccounts();
   }
-  public void buildDatabaseOfAccounts() {
-    // add accounts to each bank
+
+  public void buildDatabaseOfAccounts(){
+
     nordea.addAccount("1234567891", 0);
     nordea.addAccount("1234678912", 10);
     nordea.addAccount("1234789123", 25);
