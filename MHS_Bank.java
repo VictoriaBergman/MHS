@@ -31,17 +31,6 @@ public class MHS_Bank{
     return balance;
   }
 
-  /*
-  public double getBalanceOfAccount (String accountNumber){
-    int index = getIndexOfAccount(accountNumber);
-    double balance = -1;
-
-    if (index < accountList.size()){ // refactor this
-      balance = accountList.get(index).balance;
-    }
-    return balance;
-  }*/
-
   public boolean tryPayment(String accountNumber, double totalSum) {
     boolean paymentIsValid = false;
     int index = getIndexOfAccount(accountNumber);
