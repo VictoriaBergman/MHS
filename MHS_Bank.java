@@ -35,7 +35,6 @@ public class MHS_Bank{
     int index = getIndexOfAccount(accountNumber);
       if (indexIsLessThanSizeOfList(index)){
         accountList.get(index).balance = amount;
-        System.out.println("Balance is now: " + accountList.get(index).balance); // remove
       }
   }
 
