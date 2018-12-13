@@ -25,16 +25,24 @@ public class MHS_Bank{
 
   public double getBalanceOfIndex (int index){
     double balance = -1;
-    if (indexIsLessThanSizeOfList(index)){ // refactor this
+    if (indexIsLessThanSizeOfList(index)){
       balance = accountList.get(index).balance;
     }
     return balance;
   }
 
+  public int setBalanceOfAccount(String accountNumber, double amount){
+    int index = getIndexOfAccount(accountNumber);
+      if (indexIsLessThanSizeOfList(index)){
+        accountList.get(index).balance = amount;
+        System.out.println("Balance is now: " + accountList.get(index).balance = amount) // remove
+      }
+  }
+
   public boolean tryPayment(String accountNumber, double totalSum) {
     boolean paymentIsValid = false;
     int index = getIndexOfAccount(accountNumber);
-    if (indexIsLessThanSizeOfList(index)){ //refactor this
+    if (indexIsLessThanSizeOfList(index)){
       double balance = getBalanceOfIndex(index);
       if (balance >= totalSum){
         accountList.get(index).balance = accountList.get(index).balance - totalSum;
