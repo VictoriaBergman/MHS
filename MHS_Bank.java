@@ -31,11 +31,11 @@ public class MHS_Bank{
     return balance;
   }
 
-  public int setBalanceOfAccount(String accountNumber, double amount){
+  public void setBalanceOfAccount(String accountNumber, double amount){
     int index = getIndexOfAccount(accountNumber);
       if (indexIsLessThanSizeOfList(index)){
         accountList.get(index).balance = amount;
-        System.out.println("Balance is now: " + accountList.get(index).balance = amount) // remove
+        System.out.println("Balance is now: " + accountList.get(index).balance); // remove
       }
   }
 
