@@ -7,6 +7,10 @@ public class MHS_Bank{
     accountList.add(newAccount);
   }
 
+  public void setStateEmptyAccountList(){
+    accountList.clear();
+  }
+
   public boolean indexIsLessThanSizeOfList(int index){
     return index < accountList.size();
   }
